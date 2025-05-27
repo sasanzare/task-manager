@@ -1,7 +1,7 @@
 version: '3.8'  
 
 services:
-  # سرویس PostgreSQL
+  
   postgres:
     image: postgres:15-alpine  
     container_name: task_manager_db  
@@ -24,7 +24,7 @@ services:
     image: dpage/pgadmin4  
     container_name: task_manager_pgadmin  
     environment:  
-      PGADMIN_DEFAULT_EMAIL: saza@gmail.com # ایمیل ورود
+      PGADMIN_DEFAULT_EMAIL: saza@gmail.com 
       PGADMIN_DEFAULT_PASSWORD: admin  
     ports:  
       - "5050:80" 
