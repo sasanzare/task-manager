@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
+/// System user entity
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
 pub struct User {
     pub id: Uuid,
@@ -11,6 +12,7 @@ pub struct User {
     pub updated_at: chrono::NaiveDateTime,
 }
 
+/// Data required for user registration
 #[derive(Debug, Serialize, Deserialize)]
 pub struct NewUser {
     pub username: String,
@@ -18,6 +20,7 @@ pub struct NewUser {
     pub password: String,
 }
 
+/// User login credentials
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LoginUser {
     pub email: String,
