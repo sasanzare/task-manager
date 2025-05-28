@@ -25,7 +25,3 @@ Thumbs.db
 
 /benches/*.txt
 /tests/*.txt
-
-
-.env
-*.env
