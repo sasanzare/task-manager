@@ -1,5 +1,5 @@
 pub mod model;
 pub mod repository;
 
-pub use model::{User, NewUser, LoginUser};
-pub use repository::UserRepository;
+pub use model::{ NewUser, LoginUser};
+// pub use repository::UserRepository;

@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use chrono::NaiveDateTime;
+use chrono::{DateTime, Utc};
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Task {
@@ -8,8 +8,8 @@ pub struct Task {
     pub description: Option<String>,
     pub status: TaskStatus,
     pub user_id: i32,
-    pub created_at: NaiveDateTime,
-    pub updated_at: NaiveDateTime,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,  
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, sqlx::Type)]
