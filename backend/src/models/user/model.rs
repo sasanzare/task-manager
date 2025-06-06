@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
+use chrono::{DateTime, Utc};
 
 /// System user entity
 #[derive(Debug, Serialize, Deserialize, sqlx::FromRow)]
@@ -8,8 +9,8 @@ pub struct User {
     pub username: String,
     pub email: String,
     pub password_hash: String,
-    pub created_at: chrono::NaiveDateTime,
-    pub updated_at: chrono::NaiveDateTime,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,  
 }
 
 /// Data required for user registration
