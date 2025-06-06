@@ -13,6 +13,9 @@ use std::str::FromStr;
 
 // Application modules
 mod db;
+mod models;
+mod handlers;
+mod routes;
 #[path = "../config/mod.rs"] mod config;
 
 /**
@@ -79,6 +82,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(web::Data::new(pool.clone())) // Share database pool
             .wrap(cors) // Apply CORS middleware
             .service(hello) // Register route handler
+            .configure(routes::config) // include all routes
     })
     .bind((config.server.host, config.server.port))? // Bind to configured host:port
     .run() // Start server
